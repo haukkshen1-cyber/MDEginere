@@ -4,6 +4,13 @@
 
 ## Kiểm thử hàm `validateInputDanhMuc()`
 
+**Dữ liệu truyền vào:**
+
+```
+dmMacDinh = new DanhMuc(1, "An uong", "Danh muc mac dinh", "chi", null)
+dmThuong  = new DanhMuc(2, "An uong", "Danh muc cua user", "chi", "123")
+```
+
 ---
 
 ### Kết quả thực thi kịch bản 1
@@ -37,6 +44,10 @@
 | TC01 | `tenDanhMuc = ""`, `daTrung = false` | Gọi hàm validateInputDanhMuc() | `"Vui lòng nhập tên danh mục!"` | Pass |
 | TC02 | `tenDanhMuc = "Ăn uống"`, `daTrung = true` | Gọi hàm validateInputDanhMuc() | `"Tên danh mục đã tồn tại! Vui lòng nhập tên khác."` | Pass |
 | TC03 | `tenDanhMuc = "Ăn uống"`, `daTrung = false` | Gọi hàm validateInputDanhMuc() | `null` (hợp lệ) | Pass |
+| TC04 | `selected = null`, `hanhDong = "sua"` | Gọi hàm validateInputDanhMuc() | `"Vui lòng chọn danh mục!"` | Pass |
+| TC05 | `selected = dmMacDinh`, `hanhDong = "xoa"` | Gọi hàm validateInputDanhMuc() | `"Không thể xóa danh mục mặc định!"` | Pass |
+| TC06 | `selected = dmMacDinh`, `hanhDong = "sua"` | Gọi hàm validateInputDanhMuc() | `"Không thể sửa danh mục mặc định!"` | Pass |
+| TC07 | `selected = dmThuong`, `hanhDong = "sua"` | Gọi hàm validateInputDanhMuc() | `null` (hợp lệ) | Pass |
 
 ---
 
